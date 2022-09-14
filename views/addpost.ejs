@@ -1,0 +1,48 @@
+<%- include('./layout/header') %>
+<%- include('./layout/navbar') %>
+<!-- body start -->
+
+
+<div class="row">
+    <div class="col-xl-6 col-md-6 col-sm-12 col-12 offset-3 py-5">
+        <h2 class="text-center">Add Post</h2><hr>
+        <form action="/post" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" name="title" onkeyup="makeslug()"  id="title" placeholder="Enter your post title here">
+            </div>
+            <div class="mb-3">
+                <select class="form-select" name="category" id="category" aria-label="Default select example">
+                    <option selected>Select Category</option>
+
+                    <% if(category){
+                        for(var i = 0; i< category.length; i++) {%>
+                          <td></td>
+                          <option class="text-uppercase" value="<%= category[i].title.toLowerCase() %>"><%= category[i].title%></option>
+                          <% }                                 
+                        }else{ %>
+                            <option class="text-uppercase">No Category Found</option>
+
+                        <% } %>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="description" class="form-label">Post Description</label>
+                <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="postimage" class="form-label">Select Image</label>
+                <input class="form-control form-control-sm" id="postimage" name="postimage" type="file">
+              </div>
+              <div class="mb-3">
+                  <input class="form-control" type="text" name="slug" id="slug" placeholder="Slug will automatically generate" readonly >
+              </div>
+            <input type="submit" class="btn btn-success" value="Add post">
+        </form>
+    </div>
+</div>
+
+<!-- body end -->
+<%- include('./layout/topfooter') %>
+<%- include('./layout/footer') %>

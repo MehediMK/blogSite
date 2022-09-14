@@ -1,0 +1,16 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* The heart of the matter */
+.testimonial-group {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .testimonial-group > .testimonial-item {
+    flex: 0 0 auto;
+  }
+  

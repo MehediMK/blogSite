@@ -1,0 +1,48 @@
+<%- include('./layout/header') %>
+<%- include('./layout/navbar') %>
+<!-- body start -->
+
+<div class="container">
+
+    <!-- display posts -->
+    <div class="row my-2 py-2 px-4">
+        <!--  .testimonial-group for horizontaly scroll -->
+        <h3 class="text-center">All Post List</h3><hr>
+        
+        <% if(posts){
+            if(posts.length>6){
+                for(var i = 0; i< posts.length; i++) {%>
+                    <!-- post item  -->
+                    <div class="col-xl-2 col-md-2 col-sm-4 col-6 p-1 ">
+                        <div class="card w-100 h-100 rounded">
+                            <img class="w-100 h-100" src="<%= posts[i].image%>" alt="category item">
+                            <p class="text-center"> <a href="<%= posts[i].slug%>"><%= posts[i].title%></a> </p>
+                        </div>
+                    </div>
+                    <!-- post item  -->
+                <% }
+            } 
+            else{
+                for(var i = 0; i< posts.length; i++) {%>
+                    <!-- post item  -->
+                    <div class="col-xl-2 col-md-2 col-sm-4 col-6 p-1 ">
+                        <div class="card w-100 h-100 rounded">
+                            <img class="w-100 h-100" src="<%= posts[i].image%>" alt="category item">
+                            <p class="text-center"> <a href="<%= posts[i].slug%>"><%= posts[i].title%></a> </p>
+                        </div>
+                    </div>
+                    <!-- post item  -->
+                <% }
+            } 
+        }else{ %>
+            <option class="text-uppercase">No Category Found</option>
+        <% } %>
+
+    </div>
+    <!-- display posts -->
+
+</div>
+
+<!-- body end -->
+<%- include('./layout/topfooter') %>
+<%- include('./layout/footer') %>

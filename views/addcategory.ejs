@@ -1,0 +1,27 @@
+<%- include('./layout/header') %>
+<%- include('./layout/navbar') %>
+<!-- body start -->
+
+<div class="row d-flex justify-content-center">
+    <div class="col-xl-6 col-md-6 col-sm-12 col-12  py-5">
+        <h2 class="text-center">Add Category</h2><hr>
+        <form action="/category" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" name="title" onkeyup="makeslug()"  id="title" placeholder="Enter your post title here">
+            </div>            
+            <div class="mb-3">
+                <label for="postimage" class="form-label">Select Image</label>
+                <input class="form-control form-control-sm" id="postimage" name="postimage" type="file">
+              </div>
+              <div class="mb-3">
+                <input class="form-control" type="text" name="slug" id="slug" placeholder="Slug will automatically generate" readonly >
+            </div>
+            <input type="submit" class="btn btn-success" value="Add Category">
+        </form>
+    </div>
+</div>
+
+<!-- body end -->
+<%- include('./layout/topfooter') %>
+<%- include('./layout/footer') %>
