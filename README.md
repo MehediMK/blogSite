@@ -16,7 +16,7 @@
 5. Then write npm start on cmd to run this porject
 
 Note:
-    You need to add mongodb (URI<String> add PORT<int:3000> ) in this project (index.js) file.
+    You need to add mongodb (URI < String > add PORT < int:3000 > ) in this project (index.js) file.
 
 <details> 
   <summary>@MehediMK 👋✍</summary> 
