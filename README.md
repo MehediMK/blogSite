@@ -1,5 +1,5 @@
 <h1 align='center'>Blog Site using express JS and MongoDB</h1>
-Go to <a href="">Live URL</a>
+
 
 # Project Requirements
 1. Setup Node JS
